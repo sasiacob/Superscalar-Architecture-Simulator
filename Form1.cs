@@ -102,6 +102,16 @@ namespace Simulator
 
         }
 
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             int i = 0, k = 0;
@@ -125,6 +135,7 @@ namespace Simulator
                                      MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 nmfis = fisier;
+            button3.Enabled = true;
                 nm = nmfis.Split('\\');
                 NumeFisier.Text = nm[nm.Length-1];
                 StreamReader file = new StreamReader(fisier);
