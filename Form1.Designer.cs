@@ -31,26 +31,26 @@ namespace Simulator
             this.label2 = new System.Windows.Forms.Label();
             this.FR = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.IRmaxim = new System.Windows.Forms.ComboBox();
+            this.IR_max = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.IBS = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.Latenta = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
-            this.Memoria = new System.Windows.Forms.ComboBox();
+            this.Memory = new System.Windows.Forms.ComboBox();
             this.Label7 = new System.Windows.Forms.Label();
             this.NrRegistri = new System.Windows.Forms.ComboBox();
             this.param_Simulator = new System.Windows.Forms.GroupBox();
             this.param_Cache = new System.Windows.Forms.GroupBox();
             this.param_DC = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.block_size = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SizeDC = new System.Windows.Forms.ComboBox();
             this.param_IC = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.size_ic = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.SizeBloc = new System.Windows.Forms.ComboBox();
             this.TipCacheB = new System.Windows.Forms.RadioButton();
@@ -98,7 +98,7 @@ namespace Simulator
             // 
             // FR
             // 
-            this.FR.CausesValidation = false;
+            this.FR.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FR.FormattingEnabled = true;
             this.FR.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -110,7 +110,6 @@ namespace Simulator
             this.FR.Name = "FR";
             this.FR.Size = new System.Drawing.Size(42, 24);
             this.FR.TabIndex = 2;
-            this.FR.Text = "4";
             this.FR.SelectedIndexChanged += new System.EventHandler(this.FR_SelectedIndexChanged);
             // 
             // label3
@@ -123,21 +122,23 @@ namespace Simulator
             this.label3.TabIndex = 3;
             this.label3.Text = "Issue Rate Maxim (IRmax):";
             // 
-            // IRmaxim
+            // IR_max
             // 
-            this.IRmaxim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IRmaxim.FormattingEnabled = true;
-            this.IRmaxim.Items.AddRange(new object[] {
+            this.IR_max.DisplayMember = "1";
+            this.IR_max.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.IR_max.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IR_max.FormattingEnabled = true;
+            this.IR_max.Items.AddRange(new object[] {
             "2",
             "4",
             "8",
             "16"});
-            this.IRmaxim.Location = new System.Drawing.Point(185, 46);
-            this.IRmaxim.Name = "IRmaxim";
-            this.IRmaxim.Size = new System.Drawing.Size(42, 24);
-            this.IRmaxim.TabIndex = 4;
-            this.IRmaxim.Text = "2";
-            this.IRmaxim.SelectedIndexChanged += new System.EventHandler(this.IRmaxim_SelectedIndexChanged);
+            this.IR_max.Location = new System.Drawing.Point(185, 46);
+            this.IR_max.MaxDropDownItems = 4;
+            this.IR_max.Name = "IR_max";
+            this.IR_max.Size = new System.Drawing.Size(42, 24);
+            this.IR_max.TabIndex = 4;
+            this.IR_max.SelectedIndexChanged += new System.EventHandler(this.IR_max_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -151,6 +152,8 @@ namespace Simulator
             // 
             // IBS
             // 
+            this.IBS.DisplayMember = "4";
+            this.IBS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.IBS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IBS.FormattingEnabled = true;
             this.IBS.Items.AddRange(new object[] {
@@ -162,7 +165,6 @@ namespace Simulator
             this.IBS.Name = "IBS";
             this.IBS.Size = new System.Drawing.Size(42, 24);
             this.IBS.TabIndex = 6;
-            this.IBS.Text = "4";
             this.IBS.SelectedIndexChanged += new System.EventHandler(this.IBS_SelectedIndexChanged);
             // 
             // label5
@@ -198,19 +200,19 @@ namespace Simulator
             this.label6.TabIndex = 9;
             this.label6.Text = "Memoria Principala";
             // 
-            // Memoria
+            // Memory
             // 
-            this.Memoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Memoria.FormattingEnabled = true;
-            this.Memoria.Items.AddRange(new object[] {
+            this.Memory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Memory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Memory.FormattingEnabled = true;
+            this.Memory.Items.AddRange(new object[] {
             "10",
             "15",
             "20"});
-            this.Memoria.Location = new System.Drawing.Point(185, 131);
-            this.Memoria.Name = "Memoria";
-            this.Memoria.Size = new System.Drawing.Size(42, 24);
-            this.Memoria.TabIndex = 10;
-            this.Memoria.Text = "10";
+            this.Memory.Location = new System.Drawing.Point(185, 131);
+            this.Memory.Name = "Memory";
+            this.Memory.Size = new System.Drawing.Size(42, 24);
+            this.Memory.TabIndex = 10;
             // 
             // Label7
             // 
@@ -224,6 +226,7 @@ namespace Simulator
             // 
             // NrRegistri
             // 
+            this.NrRegistri.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.NrRegistri.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NrRegistri.FormattingEnabled = true;
             this.NrRegistri.Items.AddRange(new object[] {
@@ -235,19 +238,18 @@ namespace Simulator
             this.NrRegistri.Name = "NrRegistri";
             this.NrRegistri.Size = new System.Drawing.Size(42, 24);
             this.NrRegistri.TabIndex = 12;
-            this.NrRegistri.Text = "2";
             // 
             // param_Simulator
             // 
             this.param_Simulator.Controls.Add(this.NrRegistri);
             this.param_Simulator.Controls.Add(this.Label7);
-            this.param_Simulator.Controls.Add(this.Memoria);
+            this.param_Simulator.Controls.Add(this.Memory);
             this.param_Simulator.Controls.Add(this.label6);
             this.param_Simulator.Controls.Add(this.Latenta);
             this.param_Simulator.Controls.Add(this.label5);
             this.param_Simulator.Controls.Add(this.IBS);
             this.param_Simulator.Controls.Add(this.label4);
-            this.param_Simulator.Controls.Add(this.IRmaxim);
+            this.param_Simulator.Controls.Add(this.IR_max);
             this.param_Simulator.Controls.Add(this.label3);
             this.param_Simulator.Controls.Add(this.FR);
             this.param_Simulator.Controls.Add(this.label2);
@@ -276,7 +278,7 @@ namespace Simulator
             // 
             // param_DC
             // 
-            this.param_DC.Controls.Add(this.comboBox2);
+            this.param_DC.Controls.Add(this.block_size);
             this.param_DC.Controls.Add(this.label20);
             this.param_DC.Controls.Add(this.label1);
             this.param_DC.Controls.Add(this.SizeDC);
@@ -290,18 +292,18 @@ namespace Simulator
             this.param_DC.TabStop = false;
             this.param_DC.Text = "Data Cache";
             // 
-            // comboBox2
+            // block_size
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.block_size.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.block_size.FormattingEnabled = true;
+            this.block_size.Items.AddRange(new object[] {
             "4",
             "8",
             "16"});
-            this.comboBox2.Location = new System.Drawing.Point(88, 20);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(59, 24);
-            this.comboBox2.TabIndex = 4;
-            this.comboBox2.Text = "4";
+            this.block_size.Location = new System.Drawing.Point(88, 20);
+            this.block_size.Name = "block_size";
+            this.block_size.Size = new System.Drawing.Size(59, 24);
+            this.block_size.TabIndex = 4;
             // 
             // label20
             // 
@@ -323,6 +325,7 @@ namespace Simulator
             // 
             // SizeDC
             // 
+            this.SizeDC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SizeDC.FormattingEnabled = true;
             this.SizeDC.Items.AddRange(new object[] {
             "64",
@@ -338,13 +341,12 @@ namespace Simulator
             this.SizeDC.Name = "SizeDC";
             this.SizeDC.Size = new System.Drawing.Size(59, 24);
             this.SizeDC.TabIndex = 1;
-            this.SizeDC.Text = "64";
             // 
             // param_IC
             // 
             this.param_IC.Controls.Add(this.label10);
             this.param_IC.Controls.Add(this.label21);
-            this.param_IC.Controls.Add(this.comboBox1);
+            this.param_IC.Controls.Add(this.size_ic);
             this.param_IC.Controls.Add(this.label19);
             this.param_IC.Controls.Add(this.SizeBloc);
             this.param_IC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -374,10 +376,11 @@ namespace Simulator
             this.label21.TabIndex = 8;
             this.label21.Text = "= FR";
             // 
-            // comboBox1
+            // size_ic
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.size_ic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.size_ic.FormattingEnabled = true;
+            this.size_ic.Items.AddRange(new object[] {
             "64",
             "128",
             "256",
@@ -386,11 +389,10 @@ namespace Simulator
             "2048",
             "4096",
             "8192"});
-            this.comboBox1.Location = new System.Drawing.Point(84, 51);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(59, 24);
-            this.comboBox1.TabIndex = 7;
-            this.comboBox1.Text = "64";
+            this.size_ic.Location = new System.Drawing.Point(84, 51);
+            this.size_ic.Name = "size_ic";
+            this.size_ic.Size = new System.Drawing.Size(59, 24);
+            this.size_ic.TabIndex = 7;
             // 
             // label19
             // 
@@ -687,13 +689,13 @@ namespace Simulator
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox FR;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox IRmaxim;
+        private System.Windows.Forms.ComboBox IR_max;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox IBS;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown Latenta;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox Memoria;
+        private System.Windows.Forms.ComboBox Memory;
         private System.Windows.Forms.Label Label7;
         private System.Windows.Forms.ComboBox NrRegistri;
         private System.Windows.Forms.GroupBox param_Simulator;
@@ -721,10 +723,10 @@ namespace Simulator
         private System.Windows.Forms.TextBox NumeFisier;
         private System.Windows.Forms.RadioButton TipCacheB;
         private System.Windows.Forms.RadioButton TipCacheU;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox size_ic;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.GroupBox param_DC;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox block_size;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox textBox1;

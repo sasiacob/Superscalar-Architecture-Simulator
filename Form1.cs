@@ -11,13 +11,15 @@ namespace Simulator
 {
     public partial class Form1 : Form
     {
-        String fisier,xreads;
+        String fisier, xreads;
         string[] words;
         string[] words1;
         int j = 0;
-        int ticks = 0,index,PC=0,hit=0,miss=0;
+        int ticks = 0, index, PC = 0, hit = 0, miss = 0;
 
-       public struct TipInstr //structura pentru fiecare instructiune
+    
+
+        public struct TipInstr //structura pentru fiecare instructiune
         {
            public char tipInstructiune ;
            public int pc_Curent ;
@@ -79,9 +81,9 @@ namespace Simulator
         public Form1()
         {
             InitializeComponent();
-
+            InitializareValori();
         }
-
+        bool ready = false;
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
@@ -184,15 +186,15 @@ namespace Simulator
 
             //atribuirea parametrilor cache data
 
-            TipCacheData.Bloc_Size = Convert.ToDouble(this.comboBox2.Text);
+            TipCacheData.Bloc_Size = Convert.ToDouble(this.block_size.Text);
             TipCacheData.Size_DC = Convert.ToDouble(this.SizeDC.Text);
 
             //atribuire parametri
             TipSimulare.FR = Convert.ToInt32(this.FR.Text);
             TipSimulare.IBS = Convert.ToInt32(this.IBS.Text);
-            TipSimulare.IRmax = Convert.ToInt32(this.IRmaxim.Text);
+            TipSimulare.IRmax = Convert.ToInt32(this.IR_max.Text);
             TipSimulare.latenta = Convert.ToInt32(this.Latenta.Text);
-            TipSimulare.Mem = Convert.ToInt32(this.Memoria.Text);
+            TipSimulare.Mem = Convert.ToInt32(this.Memory.Text);
             TipSimulare.nrRegistri = Convert.ToInt32(this.NrRegistri.Text);
            
             //atribuirea nr. de intructiuni
@@ -375,16 +377,19 @@ namespace Simulator
         private void FR_SelectedIndexChanged(object sender, EventArgs e)
         {
             SizeBloc.Text = FR.Text;
-            if (Convert.ToInt32(FR.Text) > Convert.ToInt32(IBS.Text)) IBS.Text = FR.Text;
+            //   if ((Convert.ToInt32(FR.Text) > Convert.ToInt32(IBS.Text))) IBS.Text = FR.Text;
+            if (ready)
+            {
+                if (Convert.ToInt32(FR.Text) > Convert.ToInt32(IR_max.Text)) IR_max.Text = FR.Text;
+                if (Convert.ToInt32(FR.Text) < Convert.ToInt32(IBS.Text)) IBS.Text = FR.Text;
+            }
         }
 
         private void SizeBloc_SelectedIndexChanged(object sender, EventArgs e)
         {
            
-           IRmaxim.Text = FR.Text;
-           if (Convert.ToInt32(FR.Text) > Convert.ToInt32(IRmaxim.Text)) IRmaxim.Text = FR.Text;
+           IR_max.Text = FR.Text;
       
-
         }
 
         private void IBS_SelectedIndexChanged(object sender, EventArgs e)
@@ -392,12 +397,25 @@ namespace Simulator
             if (Convert.ToInt32(IBS.Text) < Convert.ToInt32(FR.Text)) IBS.Text = FR.Text;
         }
 
-        private void IRmaxim_SelectedIndexChanged(object sender, EventArgs e)
+        private void IR_max_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(IRmaxim.Text) > Convert.ToInt32(FR.Text)) IRmaxim.Text = FR.Text;
+            if (Convert.ToInt32(IR_max.Text) > Convert.ToInt32(FR.Text)) IR_max.Text = FR.Text;
         }
 
+        private void InitializareValori()
+        {
 
+            FR.Text = FR.Items[0].ToString();
+            IBS.Text = IBS.Items[0].ToString();
+            IR_max.Text = IR_max.Items[0].ToString();
+            Memory.Text = Memory.Items[0].ToString();
+            NrRegistri.Text = NrRegistri.Items[0].ToString();
+            size_ic.Text = size_ic.Items[0].ToString();
+            block_size.Text = block_size.Items[0].ToString();
+            SizeDC.Text = SizeDC.Items[0].ToString();
+            ready = true;
+
+        }
 
 
     }
