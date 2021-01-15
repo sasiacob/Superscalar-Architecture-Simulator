@@ -74,11 +74,13 @@ namespace Simulator
             this.NumeFisier = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.instruct_box = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.Latenta)).BeginInit();
             this.param_Simulator.SuspendLayout();
             this.param_Cache.SuspendLayout();
             this.param_DC.SuspendLayout();
             this.param_IC.SuspendLayout();
+            this.instruct_box.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -454,7 +456,7 @@ namespace Simulator
             // 
             // NrInstructiuni
             // 
-            this.NrInstructiuni.Location = new System.Drawing.Point(115, 342);
+            this.NrInstructiuni.Location = new System.Drawing.Point(122, 349);
             this.NrInstructiuni.Name = "NrInstructiuni";
             this.NrInstructiuni.ReadOnly = true;
             this.NrInstructiuni.Size = new System.Drawing.Size(69, 20);
@@ -463,11 +465,12 @@ namespace Simulator
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(7, 342);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(-7, 140);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(102, 13);
+            this.label9.Size = new System.Drawing.Size(106, 16);
             this.label9.TabIndex = 19;
-            this.label9.Text = "Nr. Total Instructiuni";
+            this.label9.Text = "Total Instructiuni:";
             // 
             // label11
             // 
@@ -480,7 +483,7 @@ namespace Simulator
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(377, 308);
+            this.textBox3.Location = new System.Drawing.Point(341, 287);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(100, 20);
@@ -489,7 +492,7 @@ namespace Simulator
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(63, 248);
+            this.label12.Location = new System.Drawing.Point(70, 255);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(31, 13);
             this.label12.TabIndex = 24;
@@ -497,7 +500,7 @@ namespace Simulator
             // 
             // NrLoad
             // 
-            this.NrLoad.Location = new System.Drawing.Point(115, 248);
+            this.NrLoad.Location = new System.Drawing.Point(122, 255);
             this.NrLoad.Name = "NrLoad";
             this.NrLoad.ReadOnly = true;
             this.NrLoad.Size = new System.Drawing.Size(64, 20);
@@ -506,15 +509,17 @@ namespace Simulator
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(63, 280);
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(50, 78);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(32, 13);
+            this.label13.Size = new System.Drawing.Size(43, 16);
             this.label13.TabIndex = 26;
-            this.label13.Text = "Store";
+            this.label13.Text = "Store:";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(115, 280);
+            this.textBox5.Location = new System.Drawing.Point(122, 287);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(64, 20);
@@ -523,15 +528,16 @@ namespace Simulator
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(63, 311);
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(46, 109);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(41, 13);
+            this.label14.Size = new System.Drawing.Size(53, 16);
             this.label14.TabIndex = 28;
-            this.label14.Text = "Branch";
+            this.label14.Text = "Branch:";
             // 
             // Branch
             // 
-            this.Branch.Location = new System.Drawing.Point(115, 311);
+            this.Branch.Location = new System.Drawing.Point(122, 318);
             this.Branch.Name = "Branch";
             this.Branch.ReadOnly = true;
             this.Branch.Size = new System.Drawing.Size(64, 20);
@@ -592,6 +598,19 @@ namespace Simulator
             this.label8.TabIndex = 38;
             this.label8.Text = "ticks";
             // 
+            // instruct_box
+            // 
+            this.instruct_box.Controls.Add(this.label9);
+            this.instruct_box.Controls.Add(this.label14);
+            this.instruct_box.Controls.Add(this.label13);
+            this.instruct_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.instruct_box.Location = new System.Drawing.Point(10, 213);
+            this.instruct_box.Name = "instruct_box";
+            this.instruct_box.Size = new System.Drawing.Size(213, 192);
+            this.instruct_box.TabIndex = 14;
+            this.instruct_box.TabStop = false;
+            this.instruct_box.Text = "Instructiuni";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -604,20 +623,18 @@ namespace Simulator
             this.Controls.Add(this.Ciclu);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.Branch);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.label13);
             this.Controls.Add(this.NrLoad);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.NrInstructiuni);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.param_Cache);
             this.Controls.Add(this.param_Simulator);
+            this.Controls.Add(this.instruct_box);
             this.Name = "Form1";
             this.Text = "Simulator Cache";
             ((System.ComponentModel.ISupportInitialize)(this.Latenta)).EndInit();
@@ -629,6 +646,8 @@ namespace Simulator
             this.param_DC.PerformLayout();
             this.param_IC.ResumeLayout(false);
             this.param_IC.PerformLayout();
+            this.instruct_box.ResumeLayout(false);
+            this.instruct_box.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -682,6 +701,7 @@ namespace Simulator
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox instruct_box;
     }
 }
 
