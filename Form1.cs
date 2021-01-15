@@ -25,7 +25,7 @@ namespace Simulator
            public int pc_Curent ;
            public int target ;
         };
-        TipInstr[] l = new TipInstr[900000];
+        TipInstr[] l = new TipInstr[1000000];
 
         public struct instrCache
         {
@@ -84,37 +84,7 @@ namespace Simulator
             InitializareValori();
         }
         bool ready = false;
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TipCacheU_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-       
+    
 
         private void file_btn_Click(object sender, EventArgs e)
         {
@@ -143,7 +113,7 @@ namespace Simulator
                 nm = nmfis.Split('\\');
                 NumeFisier.Text = nm[nm.Length-1];
                 StreamReader file = new StreamReader(fisier);
-               // StreamWriter write = new StreamWriter("ceva.txt");
+              
                 while (!file.EndOfStream)
                 {
                     i = 0;
@@ -170,6 +140,7 @@ namespace Simulator
                 i++;
                     }
                 }
+            TipInstr[] copie_l = l;
                 file.Close();
                // write.Close();
         }

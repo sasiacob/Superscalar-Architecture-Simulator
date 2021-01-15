@@ -94,7 +94,6 @@ namespace Simulator
             this.label2.Size = new System.Drawing.Size(105, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Fetch Rate (FR):";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // FR
             // 
@@ -173,9 +172,9 @@ namespace Simulator
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(13, 108);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(147, 16);
+            this.label5.Size = new System.Drawing.Size(150, 16);
             this.label5.TabIndex = 7;
-            this.label5.Text = "Latenta (for hit in cache)";
+            this.label5.Text = "Latenta (for hit in cache):";
             // 
             // Latenta
             // 
@@ -194,11 +193,11 @@ namespace Simulator
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(13, 134);
+            this.label6.Location = new System.Drawing.Point(13, 135);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(124, 16);
+            this.label6.Size = new System.Drawing.Size(148, 16);
             this.label6.TabIndex = 9;
-            this.label6.Text = "Memoria Principala";
+            this.label6.Text = "N_PEN (miss in cache):";
             // 
             // Memory
             // 
@@ -220,9 +219,9 @@ namespace Simulator
             this.Label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label7.Location = new System.Drawing.Point(13, 167);
             this.Label7.Name = "Label7";
-            this.Label7.Size = new System.Drawing.Size(97, 16);
+            this.Label7.Size = new System.Drawing.Size(100, 16);
             this.Label7.TabIndex = 11;
-            this.Label7.Text = "Nr. Set Registri";
+            this.Label7.Text = "Nr. Set Registri:";
             // 
             // NrRegistri
             // 
@@ -260,7 +259,6 @@ namespace Simulator
             this.param_Simulator.TabIndex = 13;
             this.param_Simulator.TabStop = false;
             this.param_Simulator.Text = "Parametri Simulator";
-            this.param_Simulator.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // param_Cache
             // 
@@ -440,7 +438,6 @@ namespace Simulator
             this.TipCacheU.TabStop = true;
             this.TipCacheU.Text = "Uniport";
             this.TipCacheU.UseVisualStyleBackColor = true;
-            this.TipCacheU.CheckedChanged += new System.EventHandler(this.TipCacheU_CheckedChanged);
             // 
             // file_btn
             // 
@@ -511,7 +508,6 @@ namespace Simulator
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(74, 21);
             this.textBox3.TabIndex = 23;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label12
             // 
@@ -540,7 +536,6 @@ namespace Simulator
             this.label13.Size = new System.Drawing.Size(43, 16);
             this.label13.TabIndex = 26;
             this.label13.Text = "Store:";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // textBox5
             // 
@@ -577,7 +572,6 @@ namespace Simulator
             this.label15.Size = new System.Drawing.Size(74, 16);
             this.label15.TabIndex = 30;
             this.label15.Text = "One-Cycle:";
-            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // Ciclu
             // 
