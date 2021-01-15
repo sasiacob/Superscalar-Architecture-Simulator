@@ -112,7 +112,9 @@ namespace Simulator
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+       
+
+        private void file_btn_Click(object sender, EventArgs e)
         {
             int i = 0, k = 0;
             words1 = new string[20];
@@ -135,7 +137,7 @@ namespace Simulator
                                      MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 nmfis = fisier;
-            button3.Enabled = true;
+            start_btn.Enabled = true;
                 nm = nmfis.Split('\\');
                 NumeFisier.Text = nm[nm.Length-1];
                 StreamReader file = new StreamReader(fisier);
@@ -170,12 +172,13 @@ namespace Simulator
                // write.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+      
+        private void exit_btn_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void start_btn_Click(object sender, EventArgs e)
         {   //atribuirea parametrilor cache instruction
 
 
@@ -380,18 +383,27 @@ namespace Simulator
            
            IRmaxim.Text = FR.Text;
            if (Convert.ToInt32(FR.Text) > Convert.ToInt32(IRmaxim.Text)) IRmaxim.Text = FR.Text;
-           IRmaxim.Enabled = false;
+      
 
         }
-       
-        
-       
+
+        private void IBS_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(IBS.Text) < Convert.ToInt32(FR.Text)) IBS.Text = FR.Text;
+        }
+
+        private void IRmaxim_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(IRmaxim.Text) > Convert.ToInt32(FR.Text)) IRmaxim.Text = FR.Text;
+        }
+
+
 
 
     }
 
-    
-            }
+
+}
         
 
 

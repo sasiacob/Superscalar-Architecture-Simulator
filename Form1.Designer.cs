@@ -48,15 +48,16 @@ namespace Simulator
             this.label1 = new System.Windows.Forms.Label();
             this.SizeDC = new System.Windows.Forms.ComboBox();
             this.param_IC = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.SizeBloc = new System.Windows.Forms.ComboBox();
             this.TipCacheB = new System.Windows.Forms.RadioButton();
             this.TipCacheU = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.file_btn = new System.Windows.Forms.Button();
+            this.exit_btn = new System.Windows.Forms.Button();
+            this.start_btn = new System.Windows.Forms.Button();
             this.NrInstructiuni = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -97,13 +98,15 @@ namespace Simulator
             // 
             // FR
             // 
+            this.FR.CausesValidation = false;
             this.FR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FR.FormattingEnabled = true;
+            this.FR.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.FR.Items.AddRange(new object[] {
             "4",
             "8",
             "16"});
-            this.FR.Location = new System.Drawing.Point(158, 18);
+            this.FR.Location = new System.Drawing.Point(185, 18);
             this.FR.Name = "FR";
             this.FR.Size = new System.Drawing.Size(42, 24);
             this.FR.TabIndex = 2;
@@ -129,11 +132,12 @@ namespace Simulator
             "4",
             "8",
             "16"});
-            this.IRmaxim.Location = new System.Drawing.Point(158, 46);
+            this.IRmaxim.Location = new System.Drawing.Point(185, 46);
             this.IRmaxim.Name = "IRmaxim";
             this.IRmaxim.Size = new System.Drawing.Size(42, 24);
             this.IRmaxim.TabIndex = 4;
             this.IRmaxim.Text = "2";
+            this.IRmaxim.SelectedIndexChanged += new System.EventHandler(this.IRmaxim_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -154,11 +158,12 @@ namespace Simulator
             "8",
             "16",
             "32"});
-            this.IBS.Location = new System.Drawing.Point(158, 74);
+            this.IBS.Location = new System.Drawing.Point(185, 75);
             this.IBS.Name = "IBS";
             this.IBS.Size = new System.Drawing.Size(42, 24);
             this.IBS.TabIndex = 6;
             this.IBS.Text = "4";
+            this.IBS.SelectedIndexChanged += new System.EventHandler(this.IBS_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -173,7 +178,7 @@ namespace Simulator
             // Latenta
             // 
             this.Latenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Latenta.Location = new System.Drawing.Point(158, 101);
+            this.Latenta.Location = new System.Drawing.Point(185, 103);
             this.Latenta.Name = "Latenta";
             this.Latenta.Size = new System.Drawing.Size(42, 22);
             this.Latenta.TabIndex = 8;
@@ -201,7 +206,7 @@ namespace Simulator
             "10",
             "15",
             "20"});
-            this.Memoria.Location = new System.Drawing.Point(158, 131);
+            this.Memoria.Location = new System.Drawing.Point(185, 131);
             this.Memoria.Name = "Memoria";
             this.Memoria.Size = new System.Drawing.Size(42, 24);
             this.Memoria.TabIndex = 10;
@@ -226,7 +231,7 @@ namespace Simulator
             "4",
             "8",
             "16"});
-            this.NrRegistri.Location = new System.Drawing.Point(158, 162);
+            this.NrRegistri.Location = new System.Drawing.Point(185, 162);
             this.NrRegistri.Name = "NrRegistri";
             this.NrRegistri.Size = new System.Drawing.Size(42, 24);
             this.NrRegistri.TabIndex = 12;
@@ -249,7 +254,7 @@ namespace Simulator
             this.param_Simulator.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.param_Simulator.Location = new System.Drawing.Point(10, 15);
             this.param_Simulator.Name = "param_Simulator";
-            this.param_Simulator.Size = new System.Drawing.Size(213, 192);
+            this.param_Simulator.Size = new System.Drawing.Size(238, 192);
             this.param_Simulator.TabIndex = 13;
             this.param_Simulator.TabStop = false;
             this.param_Simulator.Text = "Parametri Simulator";
@@ -262,9 +267,9 @@ namespace Simulator
             this.param_Cache.Controls.Add(this.TipCacheB);
             this.param_Cache.Controls.Add(this.TipCacheU);
             this.param_Cache.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.param_Cache.Location = new System.Drawing.Point(239, 15);
+            this.param_Cache.Location = new System.Drawing.Point(254, 15);
             this.param_Cache.Name = "param_Cache";
-            this.param_Cache.Size = new System.Drawing.Size(403, 192);
+            this.param_Cache.Size = new System.Drawing.Size(388, 192);
             this.param_Cache.TabIndex = 14;
             this.param_Cache.TabStop = false;
             this.param_Cache.Text = "Parametri Cache ( Mapare Directa)";
@@ -292,7 +297,7 @@ namespace Simulator
             "4",
             "8",
             "16"});
-            this.comboBox2.Location = new System.Drawing.Point(79, 62);
+            this.comboBox2.Location = new System.Drawing.Point(88, 20);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(59, 24);
             this.comboBox2.TabIndex = 4;
@@ -301,20 +306,20 @@ namespace Simulator
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(14, 65);
+            this.label20.Location = new System.Drawing.Point(8, 28);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(68, 16);
+            this.label20.Size = new System.Drawing.Size(74, 16);
             this.label20.TabIndex = 3;
-            this.label20.Text = "Bloc_Size";
+            this.label20.Text = "Block Size:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 28);
+            this.label1.Location = new System.Drawing.Point(14, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 16);
+            this.label1.Size = new System.Drawing.Size(63, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Size_DC";
+            this.label1.Text = "Size_DC:";
             // 
             // SizeDC
             // 
@@ -329,7 +334,7 @@ namespace Simulator
             "4096",
             "8192",
             ""});
-            this.SizeDC.Location = new System.Drawing.Point(79, 25);
+            this.SizeDC.Location = new System.Drawing.Point(88, 51);
             this.SizeDC.Name = "SizeDC";
             this.SizeDC.Size = new System.Drawing.Size(59, 24);
             this.SizeDC.TabIndex = 1;
@@ -337,23 +342,33 @@ namespace Simulator
             // 
             // param_IC
             // 
+            this.param_IC.Controls.Add(this.label10);
             this.param_IC.Controls.Add(this.label21);
             this.param_IC.Controls.Add(this.comboBox1);
             this.param_IC.Controls.Add(this.label19);
             this.param_IC.Controls.Add(this.SizeBloc);
             this.param_IC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.param_IC.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.param_IC.Location = new System.Drawing.Point(20, 18);
+            this.param_IC.Location = new System.Drawing.Point(33, 18);
             this.param_IC.Name = "param_IC";
-            this.param_IC.Size = new System.Drawing.Size(204, 111);
+            this.param_IC.Size = new System.Drawing.Size(191, 111);
             this.param_IC.TabIndex = 0;
             this.param_IC.TabStop = false;
             this.param_IC.Text = "Instruction Cache";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(3, 24);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(74, 16);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Block Size:";
+            // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(152, 64);
+            this.label21.Location = new System.Drawing.Point(149, 28);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(36, 16);
             this.label21.TabIndex = 8;
@@ -371,7 +386,7 @@ namespace Simulator
             "2048",
             "4096",
             "8192"});
-            this.comboBox1.Location = new System.Drawing.Point(87, 24);
+            this.comboBox1.Location = new System.Drawing.Point(84, 51);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(59, 24);
             this.comboBox1.TabIndex = 7;
@@ -380,11 +395,11 @@ namespace Simulator
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(22, 28);
+            this.label19.Location = new System.Drawing.Point(18, 51);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(53, 16);
+            this.label19.Size = new System.Drawing.Size(59, 16);
             this.label19.TabIndex = 6;
-            this.label19.Text = "Size_IC";
+            this.label19.Text = "Size_IC: ";
             // 
             // SizeBloc
             // 
@@ -394,7 +409,7 @@ namespace Simulator
             "4",
             "8",
             "16"});
-            this.SizeBloc.Location = new System.Drawing.Point(87, 57);
+            this.SizeBloc.Location = new System.Drawing.Point(84, 21);
             this.SizeBloc.Name = "SizeBloc";
             this.SizeBloc.Size = new System.Drawing.Size(59, 24);
             this.SizeBloc.TabIndex = 3;
@@ -425,39 +440,39 @@ namespace Simulator
             this.TipCacheU.UseVisualStyleBackColor = true;
             this.TipCacheU.CheckedChanged += new System.EventHandler(this.TipCacheU_CheckedChanged);
             // 
-            // button1
+            // file_btn
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(10, 224);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 31);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Alege fisier";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.file_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.file_btn.Location = new System.Drawing.Point(10, 224);
+            this.file_btn.Name = "file_btn";
+            this.file_btn.Size = new System.Drawing.Size(91, 31);
+            this.file_btn.TabIndex = 15;
+            this.file_btn.Text = "Alege fisier";
+            this.file_btn.UseVisualStyleBackColor = true;
+            this.file_btn.Click += new System.EventHandler(this.file_btn_Click);
             // 
-            // button2
+            // exit_btn
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(10, 355);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(91, 29);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Close";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.exit_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exit_btn.Location = new System.Drawing.Point(10, 355);
+            this.exit_btn.Name = "exit_btn";
+            this.exit_btn.Size = new System.Drawing.Size(91, 29);
+            this.exit_btn.TabIndex = 16;
+            this.exit_btn.Text = "Exit";
+            this.exit_btn.UseVisualStyleBackColor = true;
+            this.exit_btn.Click += new System.EventHandler(this.exit_btn_Click);
             // 
-            // button3
+            // start_btn
             // 
-            this.button3.Enabled = false;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(10, 291);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(91, 52);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Start Simulare";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.start_btn.Enabled = false;
+            this.start_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.start_btn.Location = new System.Drawing.Point(10, 291);
+            this.start_btn.Name = "start_btn";
+            this.start_btn.Size = new System.Drawing.Size(91, 52);
+            this.start_btn.TabIndex = 17;
+            this.start_btn.Text = "Start Simulare";
+            this.start_btn.UseVisualStyleBackColor = true;
+            this.start_btn.Click += new System.EventHandler(this.start_btn_Click);
             // 
             // NrInstructiuni
             // 
@@ -640,9 +655,9 @@ namespace Simulator
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(648, 402);
             this.Controls.Add(this.NumeFisier);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.start_btn);
+            this.Controls.Add(this.exit_btn);
+            this.Controls.Add(this.file_btn);
             this.Controls.Add(this.param_Cache);
             this.Controls.Add(this.param_Simulator);
             this.Controls.Add(this.instruct_box);
@@ -687,9 +702,9 @@ namespace Simulator
         private System.Windows.Forms.ComboBox SizeBloc;
         private System.Windows.Forms.ComboBox SizeDC;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button file_btn;
+        private System.Windows.Forms.Button exit_btn;
+        private System.Windows.Forms.Button start_btn;
         private System.Windows.Forms.TextBox NrInstructiuni;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
@@ -716,6 +731,7 @@ namespace Simulator
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox instruct_box;
         private System.Windows.Forms.GroupBox results_box;
+        private System.Windows.Forms.Label label10;
     }
 }
 
