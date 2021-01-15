@@ -40,14 +40,14 @@ namespace Simulator
             this.Memoria = new System.Windows.Forms.ComboBox();
             this.Label7 = new System.Windows.Forms.Label();
             this.NrRegistri = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.param_Simulator = new System.Windows.Forms.GroupBox();
+            this.param_Cache = new System.Windows.Forms.GroupBox();
+            this.param_DC = new System.Windows.Forms.GroupBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SizeDC = new System.Windows.Forms.ComboBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.param_IC = new System.Windows.Forms.GroupBox();
             this.label21 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -75,10 +75,10 @@ namespace Simulator
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Latenta)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.param_Simulator.SuspendLayout();
+            this.param_Cache.SuspendLayout();
+            this.param_DC.SuspendLayout();
+            this.param_IC.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -229,58 +229,58 @@ namespace Simulator
             this.NrRegistri.TabIndex = 12;
             this.NrRegistri.Text = "2";
             // 
-            // groupBox1
+            // param_Simulator
             // 
-            this.groupBox1.Controls.Add(this.NrRegistri);
-            this.groupBox1.Controls.Add(this.Label7);
-            this.groupBox1.Controls.Add(this.Memoria);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.Latenta);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.IBS);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.IRmaxim);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.FR);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(10, 15);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(213, 192);
-            this.groupBox1.TabIndex = 13;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Parametri";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.param_Simulator.Controls.Add(this.NrRegistri);
+            this.param_Simulator.Controls.Add(this.Label7);
+            this.param_Simulator.Controls.Add(this.Memoria);
+            this.param_Simulator.Controls.Add(this.label6);
+            this.param_Simulator.Controls.Add(this.Latenta);
+            this.param_Simulator.Controls.Add(this.label5);
+            this.param_Simulator.Controls.Add(this.IBS);
+            this.param_Simulator.Controls.Add(this.label4);
+            this.param_Simulator.Controls.Add(this.IRmaxim);
+            this.param_Simulator.Controls.Add(this.label3);
+            this.param_Simulator.Controls.Add(this.FR);
+            this.param_Simulator.Controls.Add(this.label2);
+            this.param_Simulator.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.param_Simulator.Location = new System.Drawing.Point(10, 15);
+            this.param_Simulator.Name = "param_Simulator";
+            this.param_Simulator.Size = new System.Drawing.Size(213, 192);
+            this.param_Simulator.TabIndex = 13;
+            this.param_Simulator.TabStop = false;
+            this.param_Simulator.Text = "Parametri Simulator";
+            this.param_Simulator.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // groupBox2
+            // param_Cache
             // 
-            this.groupBox2.Controls.Add(this.groupBox4);
-            this.groupBox2.Controls.Add(this.groupBox3);
-            this.groupBox2.Controls.Add(this.TipCacheB);
-            this.groupBox2.Controls.Add(this.TipCacheU);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(239, 15);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(403, 192);
-            this.groupBox2.TabIndex = 14;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Cache Parameters (Mapare directa)";
+            this.param_Cache.Controls.Add(this.param_DC);
+            this.param_Cache.Controls.Add(this.param_IC);
+            this.param_Cache.Controls.Add(this.TipCacheB);
+            this.param_Cache.Controls.Add(this.TipCacheU);
+            this.param_Cache.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.param_Cache.Location = new System.Drawing.Point(239, 15);
+            this.param_Cache.Name = "param_Cache";
+            this.param_Cache.Size = new System.Drawing.Size(403, 192);
+            this.param_Cache.TabIndex = 14;
+            this.param_Cache.TabStop = false;
+            this.param_Cache.Text = "Parametri Cache ( Mapare Directa)";
             // 
-            // groupBox4
+            // param_DC
             // 
-            this.groupBox4.Controls.Add(this.comboBox2);
-            this.groupBox4.Controls.Add(this.label20);
-            this.groupBox4.Controls.Add(this.label1);
-            this.groupBox4.Controls.Add(this.SizeDC);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.groupBox4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.groupBox4.Location = new System.Drawing.Point(208, 18);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(190, 146);
-            this.groupBox4.TabIndex = 1;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Data Cache";
+            this.param_DC.Controls.Add(this.comboBox2);
+            this.param_DC.Controls.Add(this.label20);
+            this.param_DC.Controls.Add(this.label1);
+            this.param_DC.Controls.Add(this.SizeDC);
+            this.param_DC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.param_DC.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.param_DC.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.param_DC.Location = new System.Drawing.Point(208, 18);
+            this.param_DC.Name = "param_DC";
+            this.param_DC.Size = new System.Drawing.Size(190, 111);
+            this.param_DC.TabIndex = 1;
+            this.param_DC.TabStop = false;
+            this.param_DC.Text = "Data Cache";
             // 
             // comboBox2
             // 
@@ -332,20 +332,20 @@ namespace Simulator
             this.SizeDC.TabIndex = 1;
             this.SizeDC.Text = "64";
             // 
-            // groupBox3
+            // param_IC
             // 
-            this.groupBox3.Controls.Add(this.label21);
-            this.groupBox3.Controls.Add(this.comboBox1);
-            this.groupBox3.Controls.Add(this.label19);
-            this.groupBox3.Controls.Add(this.SizeBloc);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.groupBox3.Location = new System.Drawing.Point(9, 18);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(193, 146);
-            this.groupBox3.TabIndex = 0;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Instruction Cache";
+            this.param_IC.Controls.Add(this.label21);
+            this.param_IC.Controls.Add(this.comboBox1);
+            this.param_IC.Controls.Add(this.label19);
+            this.param_IC.Controls.Add(this.SizeBloc);
+            this.param_IC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.param_IC.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.param_IC.Location = new System.Drawing.Point(9, 18);
+            this.param_IC.Name = "param_IC";
+            this.param_IC.Size = new System.Drawing.Size(193, 111);
+            this.param_IC.TabIndex = 0;
+            this.param_IC.TabStop = false;
+            this.param_IC.Text = "Instruction Cache";
             // 
             // label21
             // 
@@ -401,7 +401,7 @@ namespace Simulator
             // TipCacheB
             // 
             this.TipCacheB.AutoSize = true;
-            this.TipCacheB.Location = new System.Drawing.Point(198, 169);
+            this.TipCacheB.Location = new System.Drawing.Point(10, 162);
             this.TipCacheB.Name = "TipCacheB";
             this.TipCacheB.Size = new System.Drawing.Size(67, 20);
             this.TipCacheB.TabIndex = 5;
@@ -413,7 +413,7 @@ namespace Simulator
             // 
             this.TipCacheU.AutoSize = true;
             this.TipCacheU.Checked = true;
-            this.TipCacheU.Location = new System.Drawing.Point(15, 169);
+            this.TipCacheU.Location = new System.Drawing.Point(10, 135);
             this.TipCacheU.Name = "TipCacheU";
             this.TipCacheU.Size = new System.Drawing.Size(76, 20);
             this.TipCacheU.TabIndex = 4;
@@ -616,19 +616,19 @@ namespace Simulator
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.param_Cache);
+            this.Controls.Add(this.param_Simulator);
             this.Name = "Form1";
             this.Text = "Simulator Cache";
             ((System.ComponentModel.ISupportInitialize)(this.Latenta)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.param_Simulator.ResumeLayout(false);
+            this.param_Simulator.PerformLayout();
+            this.param_Cache.ResumeLayout(false);
+            this.param_Cache.PerformLayout();
+            this.param_DC.ResumeLayout(false);
+            this.param_DC.PerformLayout();
+            this.param_IC.ResumeLayout(false);
+            this.param_IC.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -648,9 +648,9 @@ namespace Simulator
         private System.Windows.Forms.ComboBox Memoria;
         private System.Windows.Forms.Label Label7;
         private System.Windows.Forms.ComboBox NrRegistri;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox param_Simulator;
+        private System.Windows.Forms.GroupBox param_Cache;
+        private System.Windows.Forms.GroupBox param_IC;
         private System.Windows.Forms.ComboBox SizeBloc;
         private System.Windows.Forms.ComboBox SizeDC;
         private System.Windows.Forms.Label label1;
@@ -676,7 +676,7 @@ namespace Simulator
         private System.Windows.Forms.RadioButton TipCacheU;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox param_DC;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
